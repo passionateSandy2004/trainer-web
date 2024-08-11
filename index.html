@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Game Dev Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: {
+                            blue: '#00ffff',
+                            purple: '#bf00ff',
+                            pink: '#ff00ff',
+                        },
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-black text-white font-sans">
+    <!-- Header -->
+<header class="fixed w-full z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg">
+    <nav class="container mx-auto px-6 py-3">
+        <div class="flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-neon-blue">Metaverse Makers</a>
+            <!-- Hamburger Menu Icon -->
+            <button id="menu-btn" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#roadmap" class="hover:text-neon-purple transition-colors duration-300 p-2">Roadmap</a>
+                <a href="#why-join" class="hover:text-neon-purple transition-colors duration-300 p-2">Details</a>
+                <a href="#technologies" class="hover:text-neon-purple transition-colors duration-300 p-2">Technologies</a>
+                <a href="https://forms.gle/MGE4VGrAxnfutE5o8" class="hover:bg-neon-purple transition-colors duration-300 bg-purple-500 p-2">Enroll</a>
+            </div>
+        </div>
+        <!-- Mobile Navigation Links -->
+        <div id="mobile-menu" class="hidden md:hidden mt-3">
+            <a href="#roadmap" class="block px-3 py-2 text-white hover:bg-gray-700 rounded">Roadmap</a>
+            <a href="#why-join" class="block px-3 py-2 text-white hover:bg-gray-700 rounded">Details</a>
+            <a href="#technologies" class="block px-3 py-2 text-white hover:bg-gray-700 rounded">Technologies</a>
+            <a href="#contact" class="block px-3 py-2 text-white bg-purple-500 hover:bg-gray-700 rounded">Enroll</a>
+        </div>
+    </nav>
+</header>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+
+    <!-- Hero Section -->
+    <section class="b min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
+        <div class="absolute inset-0 opacity-50">
+            <!-- Add a background animation, like particles or a slow-moving gradient -->
+        </div>
+        <div class="text-center z-10">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-pulse-slow bg-clip-text text-transparent bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink slide-in-bottom">
+                Master the Future of VR Development
+            </h1>
+            <p class="text-xl md:text-2xl m-8 opacity-0 animate-fade-in-delay">Unlock your potential in Unity, 3D Modeling, AR, VR, and XR</p>
+            <a href="#roadmap" class="bg-neon-purple text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-neon-pink transition-colors duration-300">
+                Start Your Journey
+            </a>
+            <p class="m-8 opacity-0 animate-fade-in-delay">Your Trainer Linkedin <a href="https:www.linkedin.com/in/santhosh00700" target="_blank" class="text-blue-100">Santhosh</a> </p>
+        </div>
+    </section>
+    
+    <style>
+        .b {
+            position: relative;
+            background-image: url("https://img.freepik.com/premium-photo/metaverse-future-game-entertainment-digital-technology-vr-virtual-reality-glasses-isolated-dark-background_298018-280.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .b::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity for the desired darkness */
+            z-index: 1;
+        }
+
+        .b-content {
+            position: relative;
+            z-index: 2;
+            color: white; /* Example content color, adjust as needed */
+        }
+        .slide-in-bottom {
+            transform: translateY(100%);
+            animation: slideInBottom 0.5s forwards;
+        }
+    
+        @keyframes slideInBottom {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    
+        .animate-fade-in-delay {
+            animation: fadeIn 2s forwards 0.5s;
+        }
+    
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    
+
+    <!-- Roadmap Section -->
+    
+    <section id="roadmap" class="py-20 bg-gray-900 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center text-neon-blue">Your Learning Roadmap</h2>
+            <div class="relative roadmap-container">
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-neon-blue animate-grow-line"></div>
+                <!-- Roadmap items -->
+                <div class="roadmap-item transform hover:scale-105 transition-transform duration-300 hover:bg-neon-blue hover:text-black p-6 rounded-lg">
+                    <div class="flex items-center mb-8">
+                        <div class="w-1/2 pr-8 text-right">
+                            <h3 class="text-2xl font-semibold mb-2">Unity Fundamentals</h3>
+                            <p>Master the basics of Unity game engine and C# scripting</p>
+                        </div>
+                        <div class="w-4 h-4 rounded-full bg-neon-blue z-10"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                </div>
+                <div class="roadmap-item transform hover:scale-105 transition-transform duration-300 hover:bg-neon-purple hover:text-black p-6 rounded-lg">
+                    <div class="flex items-center mb-8">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="w-4 h-4 rounded-full bg-neon-purple z-10"></div>
+                        <div class="w-1/2 pl-8">
+                            <h3 class="text-2xl font-semibold mb-2">3D Modeling & Animation</h3>
+                            <p>Create stunning 3D assets and bring them to life</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="roadmap-item transform hover:scale-105 transition-transform duration-300 hover:bg-neon-pink hover:text-black p-6 rounded-lg">
+                    <div class="flex items-center mb-8">
+                        <div class="w-1/2 pr-8 text-right">
+                            <h3 class="text-2xl font-semibold mb-2">Advanced Game Development</h3>
+                            <p>Build complex game mechanics and systems</p>
+                        </div>
+                        <div class="w-4 h-4 rounded-full bg-neon-pink z-10"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                </div>
+                <div class="roadmap-item transform hover:scale-105 transition-transform duration-300 hover:bg-neon-blue hover:text-black p-6 rounded-lg">
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="w-4 h-4 rounded-full bg-neon-blue z-10"></div>
+                        <div class="w-1/2 pl-8">
+                            <h3 class="text-2xl font-semibold mb-2">AR, VR, and XR Development</h3>
+                            <p>Explore the cutting-edge of immersive experiences</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <a href="AR VR XR Course.pdf" target="_blank" download class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-neon-blue hover:bg-neon-purple transition-colors duration-300">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                Download Full Roadmap PDF
+            </a>
+        </div>
+    </section>
+    
+    <style>
+        .animate-grow-line {
+            animation: growLine 3s ease-in-out forwards;
+        }
+    
+        @keyframes growLine {
+            0% {
+                height: 0%;
+            }
+            100% {
+                height: 100%;
+            }
+        }
+    </style>    
+
+    <!-- Courses Section -->
+    <section id="why-join" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-neon-purple mb-12">Why Join Us?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Reason 1 -->
+                <div class="group relative perspective">
+                    <div class="relative w-full h-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform duration-700 preserve-3d group-hover:rotate-y-180">
+                        <div class="absolute inset-0 bg-neon-purple p-6 rotate-y-180 backface-hidden flex flex-col justify-center text-center">
+                            <h3 class="text-xl font-semibold mb-2 text-white">Friendly Mentorship</h3>
+                            <p class="text-gray-200 mb-4">Gain invaluable knowledge from experts who have successfully navigated the complexities of unity development. They will help you avoid common pitfalls and excel in your projects.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Reason 2 -->
+                <div class="group relative perspective">
+                    <div class="relative w-full h-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform duration-700 preserve-3d group-hover:rotate-y-180">
+                        <div class="absolute inset-0 bg-neon-purple p-6 rotate-y-180 backface-hidden flex flex-col justify-center text-center">
+                            <h3 class="text-xl font-semibold mb-2 text-white">Hands-On Learning</h3>
+                            <p class="text-gray-200 mb-4">Work on real-world projects that simulate the challenges of unity development. You'll gain practical skills and build a portfolio that showcases your abilities.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Reason 3 -->
+                <div class="group relative perspective">
+                    <div class="relative w-full h-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform duration-700 preserve-3d group-hover:rotate-y-180">
+                        <div class="absolute inset-0 bg-neon-purple p-6 rotate-y-180 backface-hidden flex flex-col justify-center text-center">
+                            <h3 class="text-xl font-semibold mb-2 text-white">Future Tech</h3>
+                            <p class="text-gray-200 mb-4">Stay ahead of the curve by working with the most recent technologies. Master tools and platforms that are shaping the future of technology development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12">
+                <a href="https://forms.gle/MGE4VGrAxnfutE5o8" class="bg-neon-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-neon-purple transition-colors duration-300">
+                    Enroll Now
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+    
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-neon-purple">Technologies We Cover</h2>
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- Unity -->
+                <div class="technology-item hover:scale-110 hover:rotate-3 transition-transform duration-300">
+                    <div class="bg-gradient-to-r from-neon-blue to-neon-purple p-6 rounded-lg border-2 border-solid border-white">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmonniPEKh-wXUWWHZR91J6ipn3rGAz40zzQ&s" alt="Unity" class="mx-auto h-24 w-24 object-contain">
+                        <h3 class="text-xl font-semibold text-center mt-4 text-white">
+                            <h3 class="text-xl font-semibold text-center mt-4 text-white">Unity</h3>
+                        </div>
+                    </div>
+                    <!-- C# -->
+                    <div class="technology-item hover:scale-110 hover:rotate-3 transition-transform duration-300">
+                        <div class="bg-gradient-to-r from-neon-blue to-neon-purple p-6 rounded-lg border-2 border-solid border-white">
+                            <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--AUkHSeP---/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://raw.githubusercontent.com/sandeepkumar17/td-dev.to/di-collection-posts/assets/blog-cover/c-sharp.png" alt="C#" class="mx-auto h-24 w-24 object-contain">
+                            <h3 class="text-xl font-semibold text-center mt-4 text-white">C#</h3>
+                        </div>
+                    </div>
+                    <!-- Blender -->
+                    <div class="technology-item hover:scale-110 hover:rotate-3 transition-transform duration-300">
+                        <div class="bg-gradient-to-r from-neon-blue to-neon-purple p-6 rounded-lg border-2 border-solid border-white">
+                            <img src="https://i.pcmag.com/imagery/reviews/00CHLsbAPPKloTAg2PZlVBC-1.fit_lim.size_1050x591.v1662670755.jpg" alt="Blender" class="mx-auto h-24 w-24 object-contain">
+                            <h3 class="text-xl font-semibold text-center mt-4 text-white">Blender</h3>
+                        </div>
+                    </div>
+                    <!-- AR -->
+                    <div class="technology-item hover:scale-110 hover:rotate-3 transition-transform duration-300">
+                        <div class="bg-gradient-to-r from-neon-blue to-neon-purple p-6 rounded-lg border-2 border-solid border-white">
+                            <img src="https://media.licdn.com/dms/image/D5612AQEYp4hhvyOChg/article-cover_image-shrink_600_2000/0/1704255848325?e=2147483647&v=beta&t=KQ-1yLfnhpbnD5d7mTLVZq8cN1B32Myb901CFfcfAvg" alt="AR" class="mx-auto h-24 w-24 object-contain">
+                            <h3 class="text-xl font-semibold text-center mt-4 text-white">AR</h3>
+                        </div>
+                    </div>
+                    <!-- VR -->
+                    <div class="technology-item hover:scale-110 hover:rotate-3 transition-transform duration-300">
+                        <div class="bg-gradient-to-r from-neon-blue to-neon-purple p-6 rounded-lg border-2 border-solid border-white">
+                            <img src="https://media.assettype.com/analyticsinsight%2F2024-07%2F065e2aed-2205-43bc-9f8f-4a48eaeae82a%2FAugmented_reality.jpg" alt="VR" class="mx-auto h-24 w-24 object-contain">
+                            <h3 class="text-xl font-semibold text-center mt-4 text-white">VR</h3>
+                        </div>
+                    </div>
+                    <!-- XR -->
+                    <div class="technology-item hover:scale-110 hover:rotate-3 transition-transform duration-300">
+                        <div class="bg-gradient-to-r from-neon-blue to-neon-purple p-6 rounded-lg border-2 border-solid border-white">
+                            <img src="https://icsblog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2023/07/28222750/ImageForArticle_763_16466591728756796.jpg" alt="XR" class="mx-auto h-24 w-24 object-contain">
+                            <h3 class="text-xl font-semibold text-center mt-4 text-white">XR</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+            
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Future Game Dev Academy. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
